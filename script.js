@@ -27,6 +27,7 @@ const promisifyAsyncArrayObj = asyncArrayObj => {
 const modPromisify = promisify(mod);
 const addPromisify = promisify(add);
 const lessPromisify = promisify(less);
+const equalPromisify = promisify(equal);
 
 /**
  *
@@ -40,17 +41,18 @@ async function sumEvenIndexElements(arr, cb) {
     const evenValuesMap = new Map();
 
     let i = 0;
+
     while (await lessPromisify(i, len)) {
-      const isEven = (await modPromisify(i, 2)) === 0;
+      const isEven = await equalPromisify(await modPromisify(i, 2), 0);
 
       if (isEven) {
-        const value = await arrPromisify.get(i)
+        const value = arrPromisify.get(i);
         evenValuesMap.set(i, value);
       }
 
       i = await addPromisify(i, 1);
     }
-    
+
     const evenValues = await Promise.all(evenValuesMap.values());
 
     const res = await evenValues.reduce(async (acc, val) => {
