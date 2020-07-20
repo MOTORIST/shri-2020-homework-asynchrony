@@ -1,0 +1,16 @@
+{
+  "name": "shri-2020-homework-asynchrony",
+  "version": "1.0.0",
+  "description": "shri 2020",
+  "main": "index.js",
+  "repository": "https://github.com/MOTORIST/shri-2020-homework-asynchrony.git",
+  "author": "MOTORIST <webartmotor@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.5",
+    "jest": "^26.1.0"
+  }
+}
