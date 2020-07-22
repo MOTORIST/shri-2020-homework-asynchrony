@@ -141,4 +141,12 @@ describe("Promise _finally", () => {
 
     expect(callback.mock.calls.length).toBe(1);
   });
+
+  it("should forward promise", async () => {
+    const mockCallback = jest.fn();
+
+    await Promise.resolve()._finally().then(mockCallback);
+
+    expect(mockCallback.mock.calls.length).toBe(1);
+  });
 });
