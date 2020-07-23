@@ -1,7 +1,6 @@
-# Решение варианта 7
-Я промисифицировал все функции + объект AsyncArray. Далее использовал синтаксис async - await. Для параллельных запросов использовал Promise.all() (для того чтобы обойти ограничения на использования массива, использовал Map. PS если бы в api был ассинхронный метод toArray, то этого делать не пришлось). 
+Я промисифицировал все функции + объект AsyncArray. Туда же добавил асинхронный итератор. Первый пример сделан в двух вариантах без итератора с итератором.
 
-Решение находится в файле script.js. Результат можно посмотреть в консоли.
+Решения находится в файле script.js. Результат можно посмотреть в консоли.
 
 # Домашнее задание ШРИ по теме "Асинхронность"
 
@@ -91,11 +90,10 @@ function(array: AsyncArray, cb: (result: Number) => void) {
 
 ```ts
 function map(
-    array: AsyncArray,
-    fn: (cur: any, idx: Number, src: AsyncArray) => any,
-    cb: (result: AsyncArray) => void) {
-
-}
+  array: AsyncArray,
+  fn: (cur: any, idx: Number, src: AsyncArray) => any,
+  cb: (result: AsyncArray) => void
+) {}
 ```
 
 ### Вариант 9
@@ -104,12 +102,11 @@ function map(
 
 ```ts
 function reduce(
-    array: AsyncArray,
-    fn: (acc: any, cur: any, idx: Number, src: AsyncArray) => any,
-    initialValue: any,
-    cb: (result: any) => void) {
-
-}
+  array: AsyncArray,
+  fn: (acc: any, cur: any, idx: Number, src: AsyncArray) => any,
+  initialValue: any,
+  cb: (result: any) => void
+) {}
 ```
 
 ### Вариант 10
@@ -118,11 +115,10 @@ function reduce(
 
 ```ts
 function filter(
-    array: AsyncArray,
-    fn: (cur: any, idx: Number, src: AsyncArray) => Boolean,
-    cb: (result: AsyncArray) => void) {
-
-}
+  array: AsyncArray,
+  fn: (cur: any, idx: Number, src: AsyncArray) => Boolean,
+  cb: (result: AsyncArray) => void
+) {}
 ```
 
 ## Бонусное задание

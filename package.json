@@ -7,10 +7,12 @@
   "author": "MOTORIST <webartmotor@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "serve .",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^26.0.5",
-    "jest": "^26.1.0"
+    "jest": "^26.1.0",
+    "serve": "^11.3.2"
   }
 }
